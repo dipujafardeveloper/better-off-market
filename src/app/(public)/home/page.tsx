@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function Home() {
   const bannerData = {
-    title: "The Place for Off-Market Real Estate",
+    title: "Better Connections. Better Opportunities. BETTEROffMarket",
     description:
       "Where property owners, wholesalers, investors, and buyers connect to discover opportunities, negotiate directly",
     children: <LocationSearch />,

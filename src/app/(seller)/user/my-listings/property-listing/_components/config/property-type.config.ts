@@ -354,9 +354,8 @@ export const COOLING_OPTIONS = selectOpts([
   "Other",
 ]);
 export const WATER_HEATING_OPTIONS = selectOpts([
-  "Public",
-  "Cistern",
-  "Well",
+  "Gas",
+  "Electric",
   "None",
   "Other",
 ]);

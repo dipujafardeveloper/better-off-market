@@ -160,9 +160,9 @@ export default function Navbar({
               {navLinks().map((link) =>
                 link.dropdown ? (
                   <div key={link.label} className="flex flex-col border-b">
-                    <span className="px-3 py-2 text-sm font-medium text-gray-500 uppercase tracking-wide text-center border-b">
+                    {/* <span className="px-3 py-2 text-sm font-medium text-gray-500 uppercase tracking-wide text-center border-b">
                       {link.label}
-                    </span>
+                    </span> */}
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.path}
