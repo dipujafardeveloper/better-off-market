@@ -2,6 +2,7 @@ import { ICategory } from "@/types";
 import Image from "next/image";
 import CCountUp from "../utils/CCountUp";
 import Link from "next/link";
+import CategoryCount from "./category-count";
 
 export default function CategoryCard({ category }: { category: ICategory }) {
   const { image, title, listingCount } = category;
@@ -22,10 +23,11 @@ export default function CategoryCard({ category }: { category: ICategory }) {
         <h3 className="text-white xl:text-2xl md:text-xl text-lg font-semibold">
           {title}
         </h3>
-        <p className="text-white/80 text-xs font-semibold ">
+        {/* <p className="text-white/80 text-xs font-semibold ">
           {" "}
           <CCountUp end={listingCount} /> listings
-        </p>
+        </p> */}
+        <CategoryCount title={title} />
       </div>
     </Link>
   );

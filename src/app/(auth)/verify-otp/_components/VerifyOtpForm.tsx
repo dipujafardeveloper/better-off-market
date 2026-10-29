@@ -108,11 +108,10 @@ export default function VerifyOTpForm() {
     <div className="w-full xl:max-w-4xl md:max-w-xl mx-auto rounded-2xl bg-white p-8 shadow-xl">
       <form onSubmit={handleSubmit} className="text-center">
         <h1 className="mb-3 lg:text-3xl md:text-2xl text-xl font-bold text-primary-black">
-          Recover Password
+         Enter Verification Code
         </h1>
         <p className="mb-4 text-primary-black max-w-xl mx-auto">
-          Please provide the email address associated with your account, and
-          we&apos;ll send you verification code to reset your password.
+          We've sent a verification code to your email. Enter the code below to continue resetting your password.
         </p>
 
         <div className="mb-8">

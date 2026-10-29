@@ -175,14 +175,14 @@ export default function LocationSearch({
             className="w-full bg-transparent text-base text-gray-700 placeholder:text-gray-400 focus:outline-none"
           />
         </div>
-        <button
+        {/* <button
           type="button"
           onClick={handleSearchClick}
           className="flex shrink-0 items-center gap-2 rounded-full bg-primary-color px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
         >
           <Search className="h-4 w-4" />
           <span className="hidden md:block">Search Properties</span>
-        </button>
+        </button> */}
       </div>
 
       {/* Dropdown */}

@@ -20,25 +20,25 @@ export interface PropertyCardProps {
   navLink: string;
 }
 
-const getButtonStyle = (status: string, actionType: string) => {
-  if (status === "PENDING" && actionType === "review") {
-    return "bg-primary-color text-white hover:bg-slate-800";
-  }
-  return "bg-white text-[#594139] border border-primary-border-color hover:bg-slate-50";
-};
+// const getButtonStyle = (status: string, actionType: string) => {
+//   if (status === "PENDING" && actionType === "review") {
+//     return "bg-primary-color text-white hover:bg-slate-800";
+//   }
+//   return "bg-white text-[#594139] border border-primary-border-color hover:bg-slate-50";
+// };
 
-const getButtonText = (actionType: string) => {
-  switch (actionType) {
-    case "review":
-      return "Review Offer";
-    case "message":
-      return "Message";
-    case "details":
-      return "Details";
-    default:
-      return "Action";
-  }
-};
+// const getButtonText = (actionType: string) => {
+//   switch (actionType) {
+//     case "review":
+//       return "Review Offer";
+//     case "message":
+//       return "Message";
+//     case "details":
+//       return "Details";
+//     default:
+//       return "Action";
+//   }
+// };
 
 export default function OfferedCard({ data }: { data: IOffer }) {
   return (

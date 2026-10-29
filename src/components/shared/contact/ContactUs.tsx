@@ -54,7 +54,7 @@ export default function ContactUs() {
                 </div>
 
                 {/* Phone */}
-                <div className="flex gap-4">
+                {/* <div className="flex gap-4">
                   <div className="shrink-0">
                     <div className="flex items-center justify-center size-11 rounded-lg bg-[#0036AC1A]">
                       <Phone className="size-5 text-[#1F4E8B]" />
@@ -71,7 +71,7 @@ export default function ContactUs() {
                       +1 (800) 456789
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

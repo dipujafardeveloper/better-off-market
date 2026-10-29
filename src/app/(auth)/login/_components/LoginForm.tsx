@@ -67,7 +67,7 @@ export default function LoginForm() {
       );
       toast.success("Login successful!");
       if (callbackUrl) router.replace(callbackUrl);
-      else router.push("/user/dashboard");
+      else router.push("/");
       setError(null);
     } catch (err: any) {
       const error = errorModification(err);

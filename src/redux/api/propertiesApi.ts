@@ -57,6 +57,13 @@ const propertyApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.property],
     }),
+    getPropertyTypeCounts: build.query({
+      query: () => ({
+        url: "/properties/property-type-counts",
+        method: "GET",
+      }),
+      providesTags: [tagTypes.property],
+    }),
     updateProperty: build.mutation({
       query: ({ id, formData }) => ({
         url: `/properties/${id}`,
@@ -93,6 +100,7 @@ export const {
   useCreatePropertyMutation,
   useGetPropertiesQuery,
   useGetPropertiesForWebQuery,
+  useGetPropertyTypeCountsQuery,
   useGetPriceDroppedPropertiesQuery,
   useGetMyListingsQuery,
   useGetSinglePropertyQuery,

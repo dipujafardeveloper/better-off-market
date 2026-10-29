@@ -50,7 +50,7 @@ export default function NavButton({
               authPage && "hidden",
             )}
           >
-            Post a Deal{" "}
+            List a Property{" "}
             <CirclePlus className="bg-primary-color rounded-full text-white" />{" "}
           </Button>
         </Link>
@@ -111,7 +111,7 @@ export default function NavButton({
               onClick={() => setOpen(false)}
               className="bg-[#CEE3FF] hover:bg-[#CEE3FF]/85 text-[#1F4E8B] cursor-pointer px-4 rounded-full w-full"
             >
-              Post a Deal{" "}
+              List a Property{" "}
               <CirclePlus className="bg-primary-color rounded-full text-white" />
             </Button>
           </Link>

@@ -24,7 +24,7 @@ export default function Home() {
     <div className="space-y-16">
       <HeroBanner data={bannerData} />
       <NewlyAddedSection />
-      <PriceDropsSection />
+      <PriceDropsSection /> 
       <CategorySection />
       <GetInTouch />
       <FAQSection />

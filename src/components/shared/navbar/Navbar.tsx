@@ -58,7 +58,7 @@ export default function Navbar({
           ],
         },
         {
-          label: "My Offer",
+          label: "My Offers",
           path: "/my-offer",
         },
         { label: "About Us", path: "/about-us" },
