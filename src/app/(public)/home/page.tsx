@@ -16,8 +16,9 @@ export default function Home() {
   const bannerData = {
     title: "Better Connections. Better Opportunities. BETTEROffMarket",
     description:
-      "Where property owners, wholesalers, investors, and buyers connect to discover opportunities, negotiate directly",
+      "Where property owners, wholesalers, investors, and buyers connect to discover opportunities, negotiate, and sell directly.",
     children: <LocationSearch />,
+    titleClassName: "2xl:text-5xl lg:text-5xl md:text-4xl text-3xl font-semibold max-w-xl",
     // className: "min-h-[90vh]",
   };
   return (

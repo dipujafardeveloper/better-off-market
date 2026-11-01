@@ -14,6 +14,7 @@ type TProps = {
     dataClassName?: string;
     authPage?: boolean;
     children?: React.ReactNode;
+    titleClassName?: string;
   };
 };
 
@@ -97,7 +98,7 @@ export default function HeroBanner({ data }: TProps) {
               variants={wordReveal}
               initial="hidden"
               animate="visible"
-              className="col-span-2 2xl:text-7xl lg:text-5xl md:text-4xl text-3xl font-semibold flex flex-wrap gap-x-3"
+              className={cn("col-span-2 2xl:text-7xl lg:text-5xl md:text-4xl text-3xl font-semibold flex flex-wrap gap-x-3", data?.titleClassName)}
             >
               {words.map((w, i) => (
                 <span key={i} className="overflow-hidden inline-block pb-2">
