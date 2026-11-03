@@ -157,7 +157,9 @@ export function PropertyInfo({ property }: PropertyInfoProps) {
           title="HOA Details"
         >
           {property?.hasHoa === "no" ? (
-            <h5 className="mt-5 text-center mar">No HOA in this property </h5>
+            <h5 className="mt-5 text-center">
+              No HOA affiliated with this property.
+            </h5>
           ) : (
             <>
               <SpecRow

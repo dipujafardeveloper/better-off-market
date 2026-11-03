@@ -39,18 +39,18 @@ export function BasicInformationSection() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <TextField
-            label="State"
-            required
-            placeholder="OH"
-            registration={register("state")}
-            error={errors.state?.message}
-          />
-          <TextField
             label="City"
             required
             placeholder="Cincinnati"
             registration={register("city")}
             error={errors.city?.message}
+          />
+          <TextField
+            label="State"
+            required
+            placeholder="OH"
+            registration={register("state")}
+            error={errors.state?.message}
           />
         </div>
 

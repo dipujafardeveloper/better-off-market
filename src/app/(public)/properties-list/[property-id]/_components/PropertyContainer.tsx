@@ -60,6 +60,16 @@ export default function PropertyContainer({
               sellerId={property?.seller?._id}
             />
           )}
+          {!property?.openHouse && (
+            <div className="rounded-md border border-[#FAEEEA] bg-white p-4 shadow-[0_20px_50px_0_rgba(15,23,42,0.10)] lg:p-6">
+              <h2 className="md:text-2xl text-xl font-semibold text-primary-black mb-4">
+                Open House
+              </h2>
+              <p className="text-sm text-gray-600">
+                No open house is available for this property yet.
+              </p>
+            </div>
+          )}
 
           <ProfileCard seller={property?.seller} />
         </div>

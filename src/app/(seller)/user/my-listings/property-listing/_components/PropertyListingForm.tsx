@@ -37,7 +37,7 @@ export function PropertyListingForm({
     resolver: zodResolver(propertyListingSchema),
     mode: "onBlur",
     defaultValues: {
-      propertyType: "Multi-Family",
+      propertyType: "Residential",
       ownership: "own",
       hasHoa: "no",
       photos: [],
@@ -49,7 +49,7 @@ export function PropertyListingForm({
 
   useEffect(() => {
     methods.reset({
-      propertyType: "Multi-Family",
+      propertyType: "Residential",
       ownership: "own",
       hasHoa: "no",
       photos: [],

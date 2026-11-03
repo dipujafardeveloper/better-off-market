@@ -406,7 +406,7 @@ export const ViewIcon = ({ className }: { className?: string }) => {
 };
 export const MessageIcon = ({ className }: { className?: string }) => {
   return (
-    <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className={cn("lucide lucide-mail-dot preview-icon", className)}><path d="M12.674 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4.675"/><path d="m2 7 9 5.701a2 2 0 0 0 2 0l1.084-.686"/><circle cx="19" cy="7" r="3"/></svg>
+    <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={cn("lucide lucide-mail-dot preview-icon", className)}><path d="M12.674 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4.675"/><path d="m2 7 9 5.701a2 2 0 0 0 2 0l1.084-.686"/><circle cx="19" cy="7" r="3"/></svg>
   );
 };
 

@@ -41,7 +41,7 @@ export function BasicPropertyDetails({ property }: PropertyListingProps) {
                   statusColor[property?.status],
                 )}
               >
-                {property?.status}
+                {property?.status === "Pending" ? "Pending Approval" : property?.status}
               </span>
             </div>
           }

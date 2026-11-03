@@ -102,7 +102,13 @@ export const propertyListingSchema = z
 
     // Closing
     titleCompany: z.string().optional(),
-    closingDate: z.string().min(1, "Closing preference is required"),
+    closingDate: z
+      .string()
+      .min(1, "Closing preference is required")
+      .refine(
+        (value) => value !== "Specific",
+        "Please enter a specific closing date",
+      ),
 
     // Files
     photos: z

@@ -17,7 +17,7 @@ import { revalidateProperties } from "@/lib/actions/revalidate";
 const mapPropertyToFormValues = (
   property: Record<string, any>,
 ): Partial<PropertyListingFormValues> => ({
-  propertyType: property?.propertyType ?? "Multi-Family",
+  propertyType: property?.propertyType ?? "Residential",
   useType: property?.useType ?? undefined,
   useTypeOther: property?.useTypeOther ?? undefined,
   ownership: property?.ownership ?? "own",
@@ -114,7 +114,7 @@ export default function PropertyListingContainer() {
 
       await createProperty(formData).unwrap();
       toast.success(
-        "Property Listing request submitted successfully!. Please wait for admin approval.",
+        "Property Listing request submitted successfully!. Please wait for admin approval. Once approved, your listing will be live on the platform.",
       );
       return true;
     } catch (err) {
