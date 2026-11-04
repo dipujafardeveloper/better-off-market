@@ -20,7 +20,7 @@ export default function ProfileCard({ seller }: ProfileCardProps) {
         <div className="shrink-0">
           <Link href={`/seller-profile?seller=${seller?._id}`}>
             <ImageWithFallback
-              src={seller?.profile || "/default_user_profile.png"}
+              src={ data?.data?.profile||seller?.profile || "/default_user_profile.png"}
               alt={"seller avatar"}
               width={1200}
               height={1200}
@@ -35,11 +35,11 @@ export default function ProfileCard({ seller }: ProfileCardProps) {
             <div>
               <Link href={`/seller-profile?seller=${seller?._id}`}>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  {seller?.name}
+                  { data?.data?.name || seller?.name}
                 </h3>
               </Link>
               <p className="text-sm text-[#434655] font-semibold">
-                {seller?.company}
+                {data?.data?.company || seller?.company}
               </p>
             </div>
           </div>

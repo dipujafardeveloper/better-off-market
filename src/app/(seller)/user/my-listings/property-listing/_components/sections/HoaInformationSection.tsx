@@ -61,6 +61,7 @@ export function HoaInformationSection() {
 
         <TextField
           label="Amount ($)"
+          required={hasHoa === "yes"}
           type="number"
           step="0.01"
           placeholder="0"
@@ -74,7 +75,9 @@ export function HoaInformationSection() {
           name="hoaFrequency"
           control={control}
           options={HOA_FREQUENCY_OPTIONS}
+          required={hasHoa === "yes"}
           disabled={hasHoa === "no"}
+          error={errors.hoaFrequency?.message}
         />
       </div>
 

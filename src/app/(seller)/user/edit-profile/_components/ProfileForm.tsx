@@ -11,6 +11,7 @@ import {
   useUpdateProfileMutation,
 } from "@/redux/api/profileApi";
 import { toast } from "sonner";
+import { revalidateProperties } from "@/lib/actions/revalidate";
 
 // Zod validation schema — aligned to IUser (name, phoneNumber, etc.)
 const profileSchema = z.object({
@@ -110,6 +111,7 @@ export default function ProfileEditForm() {
       reset(formValues);
       setSelectedImage(null);
       toast.success("Profile updated successfully!");
+      await revalidateProperties();
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to save changes");

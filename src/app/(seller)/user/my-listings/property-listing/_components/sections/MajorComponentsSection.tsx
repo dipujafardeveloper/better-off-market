@@ -35,16 +35,44 @@ export function MajorComponentsSection() {
       <div className="space-y-5">
         <div className="grid gap-5 sm:grid-cols-4">
           <SelectField label="Roofing" name="roofMaterial" control={control} options={ROOF_OPTIONS} />
-          <TextField label="Age" type="number" placeholder="Years" registration={register("roofAge")} />
+          <TextField
+            label="Age"
+            type="number"
+            min={0}
+            placeholder="Years"
+            registration={register("roofAge")}
+            error={errors.roofAge?.message}
+          />
           <SelectField label="Heating System" name="heatingSystem" control={control} options={HEATING_OPTIONS} />
-          <TextField label="Age" type="number" placeholder="Years" registration={register("heatingAge")} />
+          <TextField
+            label="Age"
+            type="number"
+            min={0}
+            placeholder="Years"
+            registration={register("heatingAge")}
+            error={errors.heatingAge?.message}
+          />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-4">
           <SelectField label="Cooling" name="cooling" control={control} options={COOLING_OPTIONS} />
-          <TextField label="Age" type="number" placeholder="Years" registration={register("coolingAge")} />
+          <TextField
+            label="Age"
+            type="number"
+            min={0}
+            placeholder="Years"
+            registration={register("coolingAge")}
+            error={errors.coolingAge?.message}
+          />
           <SelectField label="Water Heating" name="waterHeating" control={control} options={WATER_HEATING_OPTIONS} />
-          <TextField label="Age" type="number" placeholder="Years" registration={register("waterHeatingAge")} />
+          <TextField
+            label="Age"
+            type="number"
+            min={0}
+            placeholder="Years"
+            registration={register("waterHeatingAge")}
+            error={errors.waterHeatingAge?.message}
+          />
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">

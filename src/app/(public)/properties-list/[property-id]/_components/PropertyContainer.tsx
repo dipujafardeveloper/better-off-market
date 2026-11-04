@@ -6,8 +6,6 @@ import ProfileCard from "./ProfileCard";
 import { Documents } from "./Documents";
 import { LocationMap } from "./LocationMap";
 import { OpenHouse } from "./OpenHouse";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import AuthenticationRequired from "./AuthenticationRequired";
 import { IPropertyResponse } from "@/types";
 import { BasicPropertyDetails } from "./BasicPropertyDetails";

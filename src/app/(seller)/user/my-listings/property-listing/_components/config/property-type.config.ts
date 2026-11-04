@@ -284,8 +284,13 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
         {
           name: "zoning",
           label: "Zoning",
-          type: "text",
-          placeholder: "Residential",
+          type: "select",
+          options: selectOpts([
+            "Residential",
+            "Commercial",
+            "Agricultural",
+            "Other",
+          ]),
           className: "sm:col-span-1 lg:col-span-2",
         },
       ],
@@ -347,20 +352,6 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
     {
       fields: [
         {
-          name: "lotSize",
-          label: "Lot Size (Acres)",
-          type: "number",
-          placeholder: "0.25",
-          step: 0.001,
-          min: 0,
-        },
-        {
-          name: "yearBuilt",
-          label: "Year Built",
-          type: "number",
-          placeholder: "1995",
-        },
-        {
           name: "garageSpaces",
           label: "Garage Spaces",
           type: "number",
@@ -374,6 +365,20 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Parking",
           type: "select",
           options: PARKING_OPTIONS,
+        },
+        {
+          name: "lotSize",
+          label: "Lot Size (Acres)",
+          type: "number",
+          placeholder: "0.25",
+          step: 0.001,
+          min: 0,
+        },
+        {
+          name: "yearBuilt",
+          label: "Year Built",
+          type: "number",
+          placeholder: "1995",
         },
       ],
     },

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm, FormProvider, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,6 +64,10 @@ export function PropertyListingForm({
     reset,
     formState: { isSubmitting },
   } = methods;
+  const propertyType = useWatch({
+    control: methods.control,
+    name: "propertyType",
+  });
 
   const handleFormSubmit = async (values: PropertyListingFormValues) => {
     const success = await onSubmit(values);
@@ -84,7 +88,7 @@ export function PropertyListingForm({
         <BasicInformationSection />
         <SelectLocationInMap />
         <PropertySpecificationsSection />
-        <MajorComponentsSection />
+        {propertyType !== "Land" && <MajorComponentsSection />}
         <HoaInformationSection />
         <ClosingPreferencesSection />
         <PropertyPhotosSection />

@@ -76,13 +76,13 @@ export const propertyListingSchema = z
 
     // Major Components & Ages
     roofMaterial: z.string().optional(),
-    roofAge: z.coerce.number().optional(),
+    roofAge: z.coerce.number().min(0, "Age cannot be negative").optional(),
     heatingSystem: z.string().optional(),
-    heatingAge: z.coerce.number().optional(),
+    heatingAge: z.coerce.number().min(0, "Age cannot be negative").optional(),
     cooling: z.string().optional(),
-    coolingAge: z.coerce.number().optional(),
+    coolingAge: z.coerce.number().min(0, "Age cannot be negative").optional(),
     waterHeating: z.string().optional(),
-    waterHeatingAge: z.coerce.number().optional(),
+    waterHeatingAge: z.coerce.number().min(0, "Age cannot be negative").optional(),
     water: z.string().optional(),
     sewer: z.string().optional(),
     foundation: z.string().optional(),
@@ -178,6 +178,14 @@ export const propertyListingSchema = z
         code: z.ZodIssueCode.custom,
         path: ["hoaAmount"],
         message: "HOA amount is required",
+      });
+    }
+
+    if (data.hasHoa === "yes" && !data.hoaFrequency) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["hoaFrequency"],
+        message: "Select how often the HOA is paid",
       });
     }
   });
