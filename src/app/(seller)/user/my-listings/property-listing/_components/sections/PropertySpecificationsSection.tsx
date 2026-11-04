@@ -5,11 +5,10 @@ import { SelectField } from "../form-fields/SelectField";
 import type { PropertyListingFormValues } from "@/lib/validations/property-listing.schema";
 import { HomeIcon } from "@/icons";
 import { PROPERTY_SPECIFICATIONS_CONFIG } from "../config/property-type.config";
-import { TextareaField } from "../form-fields/TextareaField";
 import { FieldTooltip } from "../form-fields/FieldTooltip";
 
 export function PropertySpecificationsSection() {
-  const { register, control, watch } =
+  const { register, control, watch, getFieldState } =
     useFormContext<PropertyListingFormValues>();
 
   const propertyType = watch("propertyType");
@@ -73,10 +72,19 @@ export function PropertySpecificationsSection() {
                   key={field.name}
                   label={field.label}
                   type={field.type === "number" ? "number" : "text"}
-                  step={field.type === "number" ? "0.01" : undefined}
+                  step={
+                    field.type === "number"
+                      ? (field.step ?? 0.01)
+                      : undefined
+                  }
+                  min={field.min}
                   placeholder={field.placeholder}
                   registration={register(fieldPath)}
                   extraClassName={field.className}
+                  hideNumberSpinner={
+                    field.type === "number" && !field.showSpinner
+                  }
+                  error={getFieldState(fieldPath).error?.message}
                   tooltip={
                     field.tooltip ? (
                       <FieldTooltip text={field.tooltip} />

@@ -34,6 +34,7 @@ import { revalidateProperties } from "@/lib/actions/revalidate";
 const updatePriceSchema = z.object({
   newPrice: z.coerce
     .number({ message: "Price must be a number" })
+    .int("Price must be a whole dollar amount")
     .positive("Price must be greater than 0"),
 });
 
@@ -62,13 +63,14 @@ export function UpdateListingPriceDialog({
     },
   });
 
-
   const handleSubmit = async (values: UpdatePriceValues) => {
     try {
       await updateProperty({
         id,
-        oldListingPrice: currentPrice,
-        listingPrice: values.newPrice,
+        formData: {
+          oldListingPrice: currentPrice,
+          listingPrice: values.newPrice,
+        },
       }).unwrap();
       onOpenChange(false);
       await revalidateProperties();
@@ -82,7 +84,7 @@ export function UpdateListingPriceDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-105 rounded-lg p-6"
+        className="sm:max-w-105 rounded-lg p-6 overflow-y-auto"
         showCloseButton={false}
       >
         <DialogClose className="absolute right-5 top-5 rounded-sm opacity-70 hover:opacity-100 transition-opacity">
@@ -128,7 +130,8 @@ export function UpdateListingPriceDialog({
                       <Input
                         {...field}
                         type="number"
-                        step="0.01"
+                        step="1"
+                        min="1"
                         placeholder="0"
                         className="pl-9 border-[#F3B896] focus-visible:ring-[#F3B896]/20 focus-visible:border-[#F3B896] py-6"
                       />

@@ -12,12 +12,19 @@ import AuthenticationRequired from "./AuthenticationRequired";
 import { IPropertyResponse } from "@/types";
 import { BasicPropertyDetails } from "./BasicPropertyDetails";
 import IncreaseViewsCount from "./IncreaseViewsCount";
+import moment from "moment";
 
 export default function PropertyContainer({
   property,
 }: {
   property: IPropertyResponse;
 }) {
+  const openHouseDate = property?.openHouse?.date;
+  const hasUpcomingOpenHouse =
+    Boolean(openHouseDate) &&
+    moment(openHouseDate).isValid() &&
+    !moment(openHouseDate).isBefore(moment(), "day");
+
   return (
     <Container className="mt-12">
       <IncreaseViewsCount id={property?._id} seller={property?.seller} />
@@ -38,11 +45,11 @@ export default function PropertyContainer({
             lat={property?.location?.coordinates[1]}
             lng={property?.location?.coordinates[0]}
           />
-          <Link href={"/properties-list"}>
+          {/* <Link href={"/properties-list"}>
             <Button className="w-full mt-5 bg-primary-color hover:bg-primary-color/90 text-white font-semibold py-5 px-4 rounded-lg transition-colors cursor-pointer">
               Back listing
             </Button>
-          </Link>
+          </Link> */}
         </div>
         <div className="lg:col-span-2 md:flex flex-wrap lg:flex-col gap-4 space-y-4">
           <ActionBtns
@@ -53,20 +60,20 @@ export default function PropertyContainer({
             status={property?.status}
           />
           <AuthenticationRequired />
-          {property?.openHouse && (
+          {hasUpcomingOpenHouse && property.openHouse && (
             <OpenHouse
               openHouse={property?.openHouse}
               id={property?._id}
               sellerId={property?.seller?._id}
             />
           )}
-          {!property?.openHouse && (
+          {!hasUpcomingOpenHouse && (
             <div className="rounded-md border border-[#FAEEEA] bg-white p-4 shadow-[0_20px_50px_0_rgba(15,23,42,0.10)] lg:p-6">
               <h2 className="md:text-2xl text-xl font-semibold text-primary-black mb-4">
                 Open House
               </h2>
               <p className="text-sm text-gray-600">
-                No open house is available for this property yet.
+                No upcoming open house is scheduled for this property.
               </p>
             </div>
           )}

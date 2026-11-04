@@ -32,6 +32,7 @@ export function BasicInformationSection() {
       <div className="space-y-5">
         <TextField
           label="Street Address"
+          required
           placeholder="1234 Main Street"
           registration={register("streetAddress")}
           error={errors.streetAddress?.message}

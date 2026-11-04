@@ -21,6 +21,9 @@ export interface SpecField {
   className?: string;
   rows?: number;
   tooltip?: string; // NEW
+  step?: number;
+  min?: number;
+  showSpinner?: boolean;
 }
 
 export interface SpecRow {
@@ -81,6 +84,9 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           type: "number",
           placeholder: "8",
           className: "col-span-2",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "separateGasElec",
@@ -149,6 +155,9 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Garage Spaces",
           type: "number",
           placeholder: "4",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "parking",
@@ -168,6 +177,8 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Lot Size (Acres)",
           type: "number",
           placeholder: "0.25",
+          step: 0.001,
+          min: 0,
         },
         {
           name: "yearBuilt",
@@ -188,12 +199,18 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Total # of Buildings",
           type: "number",
           placeholder: "1",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "totalUnits",
           label: "Total # of Units",
           type: "number",
           placeholder: "8",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "totalSqFootage",
@@ -210,6 +227,8 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Lot Size (Acres)",
           type: "number",
           placeholder: "0.25",
+          step: 0.001,
+          min: 0,
         },
         {
           name: "yearBuilt",
@@ -222,6 +241,9 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Parking space",
           type: "number",
           placeholder: "30",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
       ],
     },
@@ -235,6 +257,8 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           type: "number",
           placeholder: "e.g. 5.2",
           className: "sm:col-span-1 lg:col-span-2",
+          step: 0.001,
+          min: 0,
         },
         {
           name: "totalParcels",
@@ -242,6 +266,9 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           type: "number",
           placeholder: "e.g. 1",
           className: "sm:col-span-1 lg:col-span-2",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
       ],
     },
@@ -285,18 +312,27 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Bedrooms",
           type: "number",
           placeholder: "3",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "fullBaths",
           label: "Full Baths",
           type: "number",
           placeholder: "2",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "halfBaths",
           label: "Half Baths",
           type: "number",
           placeholder: "1",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "sqFootage",
@@ -315,6 +351,8 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Lot Size (Acres)",
           type: "number",
           placeholder: "0.25",
+          step: 0.001,
+          min: 0,
         },
         {
           name: "yearBuilt",
@@ -327,6 +365,9 @@ export const PROPERTY_SPECIFICATIONS_CONFIG: Record<PropertyType, SpecRow[]> = {
           label: "Garage Spaces",
           type: "number",
           placeholder: "2",
+          step: 1,
+          min: 0,
+          showSpinner: true,
         },
         {
           name: "parking",
@@ -392,5 +433,5 @@ export const HOA_FREQUENCY_OPTIONS = selectOpts([
   "Annually",
 ]);
 
-export const USE_TYPE_OPTIONS = selectOpts(["Medical", "Others"]);
+export const USE_TYPE_OPTIONS = selectOpts(["Apartment", "Retail", "Restaurant", "Service","Manufacturing", "Industrial", "Others"]);
 export const CLOSING_DATE_OPTIONS = selectOpts(["ASAP", "Specific"]);

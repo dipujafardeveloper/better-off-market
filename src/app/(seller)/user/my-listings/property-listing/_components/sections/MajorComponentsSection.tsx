@@ -34,7 +34,7 @@ export function MajorComponentsSection() {
 
       <div className="space-y-5">
         <div className="grid gap-5 sm:grid-cols-4">
-          <SelectField label="Roof Material" name="roofMaterial" control={control} options={ROOF_OPTIONS} />
+          <SelectField label="Roofing" name="roofMaterial" control={control} options={ROOF_OPTIONS} />
           <TextField label="Age" type="number" placeholder="Years" registration={register("roofAge")} />
           <SelectField label="Heating System" name="heatingSystem" control={control} options={HEATING_OPTIONS} />
           <TextField label="Age" type="number" placeholder="Years" registration={register("heatingAge")} />

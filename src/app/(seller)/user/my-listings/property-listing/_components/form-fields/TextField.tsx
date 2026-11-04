@@ -12,6 +12,7 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   tooltip?: ReactNode;
   extraClassName?: string;
   wholeNumbersOnly?: boolean; // blocks decimals, letters, e/+/- etc.
+  hideNumberSpinner?: boolean;
 }
 
 const ALLOWED_NAV_KEYS = [
@@ -28,6 +29,7 @@ export function TextField({
   className,
   extraClassName,
   wholeNumbersOnly,
+  hideNumberSpinner,
   onKeyDown,
   ...props
 }: TextFieldProps) {
@@ -69,6 +71,10 @@ export function TextField({
         }}
         className={`bg-[#F2F4F6] py-5 rounded-md ${error ? "border-red-400" : "border-[#E2E8F0]"} ${
           className ?? ""
+        } ${
+          hideNumberSpinner
+            ? "[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            : ""
         }`}
       />
       {error && <p className="mt-1 text-xs text-red-500">{error}</p>}

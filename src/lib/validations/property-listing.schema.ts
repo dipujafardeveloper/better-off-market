@@ -1,5 +1,6 @@
 import {
   BASIC_INFO_CONFIG,
+  PROPERTY_SPECIFICATIONS_CONFIG,
   PROPERTY_TYPES,
 } from "@/app/(seller)/user/my-listings/property-listing/_components/config/property-type.config";
 import { z } from "zod";
@@ -50,7 +51,7 @@ export const propertyListingSchema = z
     city: z.string().min(1, "City is required"),
     zipCode: z.string().min(5, "Enter a valid ZIP code"),
     // county: z.string().min(1, "County is required"),
-    parcelIds: z.string().optional(),
+    parcelIds: z.string().min(1, "Parcel ID(s) are required"),
     listingPrice: z.coerce
       .number({ error: "Enter a valid amount" })
       .positive("Listing price is required"),
@@ -118,6 +119,44 @@ export const propertyListingSchema = z
   })
   .superRefine((data, ctx) => {
     const config = BASIC_INFO_CONFIG[data.propertyType];
+    const specificationFields = PROPERTY_SPECIFICATIONS_CONFIG[
+      data.propertyType
+    ].flatMap((row) => row.fields);
+
+    for (const field of specificationFields) {
+      if (field.type !== "number" || field.step === undefined) continue;
+
+      const rawValue = data.specifications[field.name];
+      if (rawValue === undefined || rawValue === "") continue;
+
+      const value = Number(rawValue);
+      if (!Number.isFinite(value)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["specifications", field.name],
+          message: `${field.label} must be a valid number`,
+        });
+        continue;
+      }
+
+      if (field.min !== undefined && value < field.min) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["specifications", field.name],
+          message: `${field.label} cannot be less than ${field.min}`,
+        });
+      }
+
+      const precision = String(field.step).split(".")[1]?.length ?? 0;
+      const scaledValue = value * 10 ** precision;
+      if (Math.abs(scaledValue - Math.round(scaledValue)) > 1e-8) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["specifications", field.name],
+          message: `${field.label} allows up to ${precision} decimal places`,
+        });
+      }
+    }
 
     if (config.showParcelId && !data.parcelIds?.trim()) {
       ctx.addIssue({
