@@ -4,15 +4,15 @@ export const quickLinks = [
         href: "/"
     },
     {
-        label: "Browse Listings",
+        label: "Browse Properties",
         href: "/properties-list"
     },
     {
-        label: "My Offer",
-        href: "#"
+        label: "My Offers",
+        href: "/my-offer"
     },
     {
-        label: "About us",
+        label: "About Us",
         href: "/about-us"
     },
     {

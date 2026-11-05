@@ -14,11 +14,11 @@ export const metadata = {
 
 export default function Home() {
   const bannerData = {
-    title: "Better Connections. Better Opportunities. BETTEROffMarket",
+    title: "The Place for Off-Market Real Estate",
     description:
       "Where property owners, wholesalers, investors, and buyers connect to discover opportunities, negotiate, and sell directly.",
     children: <LocationSearch />,
-    titleClassName: "2xl:text-5xl lg:text-5xl md:text-4xl text-3xl font-semibold max-w-xl",
+    titleClassName: "2xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold max-w-2xl",
     // className: "min-h-[90vh]",
   };
   return (

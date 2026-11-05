@@ -69,7 +69,9 @@ export function ScheduleOpenHouseDialog({
     try {
       await updateProperty({
         id,
-        openHouse: values,
+        formData: {
+          openHouse: values,
+        },
       }).unwrap();
       onOpenChange(false);
       await revalidateProperties();

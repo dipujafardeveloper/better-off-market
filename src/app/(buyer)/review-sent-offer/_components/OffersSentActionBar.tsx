@@ -98,7 +98,7 @@ export function OffersSentActionBar({
           )}
         >
           <MessageSquareText size={14} />
-          Message buyer
+          Message Seller
         </button>
       </Link>
 

@@ -78,7 +78,7 @@ export function OfferForm({
         />
         <SupportingDocumentsSection onFilesChange={setSupportingDocuments} />
         <SingleTextareaSection
-          title="Notes to seller"
+          title="Note to seller"
           name="notesToSeller"
           placeholder="Add a personal note or explain specific parts of your offer..."
         />

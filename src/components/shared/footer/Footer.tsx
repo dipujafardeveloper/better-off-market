@@ -81,7 +81,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href={"https://www.google.com"}
+                    href={"https://www.betteroffmarket.com"}
                     className=" transition-colors text-sm text-primary-color font-bold"
                   >
                     BetteroffMarket.com
@@ -89,7 +89,7 @@ export default function Footer() {
                 </li>
               </ul>
               {/* ===================== Social Links =========================== */}
-              <div className="flex items-center gap-x-2 mt-3">
+              {/* <div className="flex items-center gap-x-2 mt-3">
                 <Link
                   href={"https://www.google.com"}
                   className=" size-7 flex-center rounded-full"
@@ -102,7 +102,7 @@ export default function Footer() {
                 >
                   <UsersIcon className="hover:scale-105" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </Container>

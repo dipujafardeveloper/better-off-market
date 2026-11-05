@@ -37,7 +37,7 @@ export default function OfferListContainer() {
             value="pending"
             className="data-active:bg-primary-color data-active:text-white cursor-pointer px-4 py-3.5 rounded-full mr-1"
           >
-            Pending
+            Pending Review
           </TabsTrigger>
           <TabsTrigger
             value="countered"

@@ -246,7 +246,7 @@ export function OfferSummary({ data, sidebarFooter }: OfferSummaryProps) {
 
         {data.notesToSeller ? (
           <SummaryCard
-            title="Notes to Seller"
+            title="Note to Seller"
             icon={<MessageSquareText color="#00214C" size={20} />}
           >
             <p className="rounded-lg bg-[#F2F4F6] p-3 md:text-base text-sm text-[#594139] italic leading-relaxed">
